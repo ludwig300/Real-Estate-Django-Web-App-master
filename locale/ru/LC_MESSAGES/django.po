@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+
+# This file is distributed under the same license as the PACKAGE package.
+
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+
+#
+
+#, fuzzy
+
+msgid ""
+
+msgstr ""
+
+"Project-Id-Version: PACKAGE VERSION\n"
+
+"Report-Msgid-Bugs-To: \n"
+
+"POT-Creation-Date: 2024-10-11 18:54+0700\n"
+
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+"Language: \n"
+
+"MIME-Version: 1.0\n"
+
+"Content-Type: text/plain; charset=UTF-8\n"
+
+"Content-Transfer-Encoding: 8bit\n"
+
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+
+msgid "login/"
+msgstr "вход/"
+
+msgid "register/"
+msgstr "регистрация/"
+
+msgid "logout/"
+msgstr "выход/"
+
+msgid "dashboard/"
+msgstr "панель_управления/"
+
+msgid "contact/"
+msgstr "контакты/"
+
+msgid "search/"
+msgstr "поиск/"
+
+msgid "about/"
+msgstr "о_нас/"
+
+msgid "User Dashboard"
+msgstr "Панель управления пользователя"
+
+msgid "Manage your Real Estate account"
+msgstr "Управляйте своим аккаунтом недвижимости"
+
+msgid "Home"
+msgstr "Домой"
+
+msgid "Dashboard"
+msgstr "Панель управления"
+
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+msgid "Here are the property listings that you have inquired about"
+msgstr "Здесь находятся объявления о недвижимости, по которым вы делали запрос"
+
+msgid "Property"
+msgstr "Недвижимость"
+
+msgid "View Listing"
+msgstr "Просмотреть объявление"
+
+msgid "You have not made any inquiries"
+msgstr "Вы не сделали никаких запросов"
+
+msgid "Account Login"
+msgstr "Вход в аккаунт"
+
+msgid "Login"
+msgstr "Войти"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Register Account"
+msgstr "Регистрация аккаунта"
+
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+msgid "First Name"
+msgstr "Имя"
+
+msgid "Last Name"
+msgstr "Фамилия"
+
+msgid "Email"
+msgstr "Электронная почта"
+
+msgid "Confirm Password"
+msgstr "Подтвердите пароль"
+
+msgid "Admin Area"
+msgstr "Административная панель"
+
+msgid "Listings"
+msgstr "Объявления"
+
+msgid "Back To Listings"
+msgstr "Вернуться к объявлениям"
+
+msgid "Asking Price:"
+msgstr "Цена:"
+
+msgid "Bedrooms:"
+msgstr "Спальни:"
+
+msgid "Bathrooms:"
+msgstr "Ванные комнаты:"
+
+msgid "Square Meter:"
+msgstr "Квадратные метры:"
+
+msgid "Listing Date:"
+msgstr "Дата объявления:"
+
+msgid "Realtor:"
+msgstr "Риэлтор:"
+
+msgid "Property Realtor"
+msgstr "Риэлтор недвижимости"
+
+msgid "Make An Inquiry"
+msgstr "Сделать запрос"
+
+msgid "Send"
+msgstr "Отправить"
+
+msgid "Browse Property Listings"
+msgstr "Просмотр объявлений о недвижимости"
+
+msgid "More Info"
+msgstr "Подробнее"
+
+msgid "No Listings Available"
+msgstr "Нет доступных объявлений"
+
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+msgid "Keywords"
+msgstr "Ключевые слова"
+
+msgid "Keyword (Pool, Gym, etc)"
+msgstr "Ключевое слово (Бассейн, Спортзал и т.д.)"
+
+msgid "City"
+msgstr "Город"
+
+msgid "Bedrooms (Any)"
+msgstr "Количество спален (Любое)"
+
+msgid "Max Price (All)"
+msgstr "Максимальная цена (Любая)"
+
+msgid "Submit form"
+msgstr "Отправить форму"
+
+msgid "Property Image"
+msgstr "Изображение недвижимости"
+
+msgid "Sqft"
+msgstr "Кв. м."
+
+msgid "Bathrooms"
+msgstr "Ванные комнаты"
+
+msgid "About Us"
+msgstr "О нас"
+
+msgid "About Real Estate"
+msgstr "О недвижимости"
+
+msgid "About"
+msgstr "О нас"
+
+msgid "We Search For The Perfect Home"
+msgstr "Мы ищем идеальный дом"
+
+msgid "Seller of the month"
+msgstr "Продавец месяца"
+
+msgid "Seller Of The Month"
+msgstr "Продавец месяца"
+
+msgid "We Work For You"
+msgstr "Мы работаем для вас"
+
+msgid "View Our Featured Listings"
+msgstr "Посмотреть наши лучшие объявления"
+
+msgid "Our Team"
+msgstr "Наша команда"
+
+msgid "Realtor"
+msgstr "Риэлтор"
+
+msgid "No Realtors Available"
+msgstr "Нет доступных риэлторов"
+
+msgid "Property Searching Just Got So Easy"
+msgstr "Поиск недвижимости стал таким простым"
+
+msgid "Latest Listings"
+msgstr "Последние объявления"
+
+msgid "Consulting Services"
+msgstr "Консультационные услуги"
+
+msgid "Property Management"
+msgstr "Управление недвижимостью"
+
+msgid "Renting & Selling"
+msgstr "Аренда и продажа"
+
+msgid "Error:"
+msgstr "Ошибка:"
+
+msgid "Success:"
+msgstr "Успех:"
+
+msgid "Warning:"
+msgstr "Предупреждение:"
+
+msgid "Info:"
+msgstr "Информация:"
+
+msgid "Featured Listings"
+msgstr "Лучшие объявления"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "English"
+msgstr "Английский"
+
+msgid "Русский"
+msgstr "Русский"
