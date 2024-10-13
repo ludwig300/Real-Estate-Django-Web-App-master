@@ -12,24 +12,24 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
           <li class="nav-item {% if '/' == request.path %}active{% endif %} mr-3">
-            <a class="nav-link" href="{% url 'index' %}">{% trans "Домой" %}</a>
+            <a class="nav-link" href="{% url 'index' %}">{% trans "Home" %}</a>
           </li>
           <li class="nav-item {% if 'about' in request.path %}active{% endif %} mr-3">
-            <a class="nav-link" href="{% url 'about' %}">{% trans "О нас" %}</a>
+            <a class="nav-link" href="{% url 'about' %}">{% trans "About us" %}</a>
           </li>
           <li class="nav-item {% if 'listings' in request.path %}active{% endif %} mr-3">
-            <a class="nav-link" href="{% url 'listings' %}">{% trans "Лучшие объявления" %}</a>
+            <a class="nav-link" href="{% url 'listings' %}">{% trans "Best choice" %}</a>
           </li>
         </ul>
 
         <ul class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
             <li class="nav-item {% if 'dashboard' in request.path %}active{% endif %} mr-3">
-              <a class="nav-link" href="{% url 'dashboard' %}">{% trans "Добро пожаловать" %} {{ user.username }} (Dashboard)</a>
+              <a class="nav-link" href="{% url 'dashboard' %}">{% trans "Welcome" %} {{ user.username }} (Dashboard)</a>
             </li>
             <li class="nav-item mr-3">
               <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
-                <i class="fas fa-sign-out-alt"></i> {% trans "Выйти" %}
+                <i class="fas fa-sign-out-alt"></i> {% trans "Exit" %}
               </a>
               <form action="{% url 'logout' %}" method="POST" id="logout">
                 {% csrf_token %}
@@ -39,11 +39,11 @@
           {% else %}
             <li class="nav-item {% if 'register' in request.path %}active{% endif %} mr-3">
               <a class="nav-link" href="{% url 'register' %}">
-                <i class="fas fa-user-plus"></i> {% trans "Регистрация" %}</a>
+                <i class="fas fa-user-plus"></i> {% trans "Registration" %}</a>
             </li>
             <li class="nav-item {% if 'login' in request.path %}active{% endif %} mr-3">
               <a class="nav-link" href="{% url 'login' %}">
-                <i class="fas fa-sign-in-alt"></i> {% trans "Войти" %}</a>
+                <i class="fas fa-sign-in-alt"></i> {% trans "Sign in" %}</a>
             </li>
           {% endif %}
         </ul>
