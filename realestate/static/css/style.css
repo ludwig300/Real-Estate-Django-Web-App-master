@@ -150,3 +150,6 @@ option {
   }
 }
 
+.dropdown {
+  margin-left: auto;
+}
