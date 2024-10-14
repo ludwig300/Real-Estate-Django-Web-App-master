@@ -49,11 +49,11 @@
         </ul> -->
 
         <!-- Переключение языка с флагами -->
-        <div class="dropdown">
+        <div class="dropdown ml-auto">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-globe"></i> <!-- Иконка глобуса -->
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="{% url 'set_language' %}?language=en&next=/en/">
               <img src="{% static 'img/flags/en.png' %}" alt="English">
             </a>

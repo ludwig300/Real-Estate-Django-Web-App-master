@@ -124,6 +124,9 @@ option {
 }
 
 /* Выравнивание флага и текста */
+.navbar .dropdown {
+  margin-left: auto;
+}
 .dropdown-toggle {
   background-color: transparent;
   border: none;
@@ -142,9 +145,6 @@ option {
 }
 
 @media (max-width: 768px) {
-  .dropdown {
-    margin-left: auto;
-  }
   .dropdown-toggle img {
     width: 26px;
     height: auto;
@@ -156,6 +156,4 @@ option {
   }
 }
 
-.dropdown {
-  margin-left: auto;
-}
+
