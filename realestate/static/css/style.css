@@ -135,6 +135,7 @@ option {
 
 .dropdown-item img {
   margin-right: 8px;
+  height: auto;
 }
 
 @media (max-width: 768px) {
