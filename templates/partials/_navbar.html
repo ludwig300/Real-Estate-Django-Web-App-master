@@ -51,21 +51,18 @@
         <!-- Переключение языка с флагами -->
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {% if LANGUAGE_CODE == 'en' %}
-              <img src="{% static 'img/flags/en.png' %}" alt="English" width="30" height="20">
-            {% elif LANGUAGE_CODE == 'ru' %}
-              <img src="{% static 'img/flags/ru.png' %}" alt="Русский" width="30" height="20">
-            {% endif %}
+            <i class="fas fa-globe"></i> <!-- Иконка глобуса -->
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{% url 'set_language' %}?language=en&next={{ request.get_full_path }}">
-              <img src="{% static 'img/flags/en.png' %}" alt="English" width="30" height="20"> English
+            <a class="dropdown-item" href="{% url 'set_language' %}?language=en&next=/en/">
+              <img src="{% static 'img/flags/en.png' %}" alt="English" width="30" height="20">
             </a>
-            <a class="dropdown-item" href="{% url 'set_language' %}?language=ru&next={{ request.get_full_path }}">
-              <img src="{% static 'img/flags/ru.png' %}" alt="Русский" width="30" height="20"> Русский
+            <a class="dropdown-item" href="{% url 'set_language' %}?language=ru&next=/ru/">
+              <img src="{% static 'img/flags/ru.png' %}" alt="Русский" width="30" height="20">
             </a>
           </div>
         </div>
+
       </div>
     </div>
   </nav>
