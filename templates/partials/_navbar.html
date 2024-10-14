@@ -49,18 +49,20 @@
         </ul> -->
 
         <!-- Переключение языка с флагами -->
-        <ul class="navbar-nav ml-auto d-flex align-items-center">
-          <li class="nav-item">
-            <a href="{% url 'set_language' %}?language=en&next=/en/" class="nav-link p-2">
-              <img src="{% static 'img/flags/en.png' %}" alt="English" width="30" height="20">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="{% static 'img/flags/' %}{{ 'en' if LANGUAGE_CODE == 'en' else 'ru' }}.png" alt="{{ LANGUAGE_CODE }}" width="30" height="20">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'set_language' %}?language=en&next={{ request.get_full_path }}">
+              <img src="{% static 'img/flags/en.png' %}" alt="English" width="30" height="20"> English
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'set_language' %}?language=ru&next=/ru/" class="nav-link p-2">
-              <img src="{% static 'img/flags/ru.png' %}" alt="Русский" width="30" height="20">
+            <a class="dropdown-item" href="{% url 'set_language' %}?language=ru&next={{ request.get_full_path }}">
+              <img src="{% static 'img/flags/ru.png' %}" alt="Русский" width="30" height="20"> Русский
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
+        
       </div>
     </div>
   </nav>

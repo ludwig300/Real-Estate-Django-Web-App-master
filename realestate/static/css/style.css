@@ -124,33 +124,28 @@ option {
 }
 
 /* Выравнивание флага и текста */
-option img {
-  margin-right: 5px;
+.dropdown-toggle {
+  background-color: transparent;
+  border: none;
 }
 
-.navbar .nav-link img {
-  width: 20px;  /* или другой подходящий размер */
-  height: auto;
-  vertical-align: middle;
+.dropdown-menu {
+  min-width: 100px;
+}
+
+.dropdown-item img {
+  margin-right: 8px;
 }
 
 @media (max-width: 768px) {
-  .navbar-nav.ml-auto {
-    justify-content: center;
-    margin-top: 10px;
-  }
-}
-
-.navbar .nav-item img {
-  margin-right: 10px; /* регулировка отступа между флагами */
-}
-
-@media (max-width: 576px) {
-  .navbar .nav-link img {
-    width: 15px;  /* уменьшение размера флагов для маленьких экранов */
+  .dropdown-toggle img {
+    width: 24px;
     height: auto;
   }
-  .navbar-nav {
-    justify-content: center;
+
+  .dropdown-item img {
+    width: 24px;
+    height: auto;
   }
 }
+
