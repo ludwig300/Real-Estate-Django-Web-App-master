@@ -123,35 +123,41 @@ option {
   color: black;
 }
 
-/* Выравнивание флага и текста */
+//* Стили для флагов в переключателе языка */
 .navbar .dropdown {
   margin-left: auto;
 }
 .dropdown-toggle {
   background-color: transparent;
   border: none;
+  padding: 0; /* Убираем отступы */
 }
 
 .dropdown-menu {
   min-width: 1rem;
+  right: 0; /* Гарантируем, что выпадающее меню появится справа */
+  left: auto; /* Сбрасываем возможное левое выравнивание */
 }
 
 .dropdown-item img {
-  width: 3rem;
+  width: 30px; /* Увеличим немного ширину */
   height: auto;
 }
 .dropdown-item {
   padding: 0.15rem 0.6rem;
+  display: flex;
+  align-items: center; /* Выравниваем иконки по центру */
 }
 
+/* Мобильная версия */
 @media (max-width: 768px) {
   .dropdown-toggle img {
-    width: 26px;
+    width: 26px; /* Меньший размер для мобильных устройств */
     height: auto;
   }
 
   .dropdown-item img {
-    width: 26px;
+    width: 26px; /* Тоже уменьшаем флаги */
     height: auto;
   }
 }
