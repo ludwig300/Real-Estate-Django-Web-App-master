@@ -129,6 +129,8 @@ option img {
 }
 
 .navbar .nav-link img {
+  width: 20px;  /* или другой подходящий размер */
+  height: auto;
   vertical-align: middle;
 }
 
@@ -136,5 +138,19 @@ option img {
   .navbar-nav.ml-auto {
     justify-content: center;
     margin-top: 10px;
+  }
+}
+
+.navbar .nav-item img {
+  margin-right: 10px; /* регулировка отступа между флагами */
+}
+
+@media (max-width: 576px) {
+  .navbar .nav-link img {
+    width: 15px;  /* уменьшение размера флагов для маленьких экранов */
+    height: auto;
+  }
+  .navbar-nav {
+    justify-content: center;
   }
 }
