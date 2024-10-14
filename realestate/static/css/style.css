@@ -151,6 +151,9 @@ option {
 
 /* Мобильная версия */
 @media (max-width: 768px) {
+  .d-flex {
+    display: flex;
+  }
   .dropdown-toggle img {
     width: 26px; /* Меньший размер для мобильных устройств */
     height: auto;
