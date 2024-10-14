@@ -134,7 +134,11 @@ option {
 }
 
 .dropdown-item img {
+  width: 3rem;
   height: auto;
+}
+.dropdown-item {
+  padding: 0.15rem 0.6rem;
 }
 
 @media (max-width: 768px) {
