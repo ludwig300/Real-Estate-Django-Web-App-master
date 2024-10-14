@@ -130,22 +130,24 @@ option {
 }
 
 .dropdown-menu {
-  min-width: 100px;
+  min-width: 1rem;
 }
 
 .dropdown-item img {
-  margin-right: 8px;
   height: auto;
 }
 
 @media (max-width: 768px) {
+  .dropdown {
+    margin-left: auto;
+  }
   .dropdown-toggle img {
-    width: 24px;
+    width: 26px;
     height: auto;
   }
 
   .dropdown-item img {
-    width: 24px;
+    width: 26px;
     height: auto;
   }
 }
