@@ -4456,7 +4456,7 @@ button.bg-dark:focus {
   display: table-cell !important; }
 
 .d-flex {
-  display: flex !important; }
+  display: flex; }
 
 .d-inline-flex {
   display: inline-flex !important; }
