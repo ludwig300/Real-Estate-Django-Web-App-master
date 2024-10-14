@@ -51,7 +51,11 @@
         <!-- Переключение языка с флагами -->
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="{% static 'img/flags/' %}{{ 'en' if LANGUAGE_CODE == 'en' else 'ru' }}.png" alt="{{ LANGUAGE_CODE }}" width="30" height="20">
+            {% if LANGUAGE_CODE == 'en' %}
+              <img src="{% static 'img/flags/en.png' %}" alt="English" width="30" height="20">
+            {% elif LANGUAGE_CODE == 'ru' %}
+              <img src="{% static 'img/flags/ru.png' %}" alt="Русский" width="30" height="20">
+            {% endif %}
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="{% url 'set_language' %}?language=en&next={{ request.get_full_path }}">
@@ -62,7 +66,6 @@
             </a>
           </div>
         </div>
-        
       </div>
     </div>
   </nav>
