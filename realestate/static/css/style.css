@@ -162,10 +162,17 @@ option {
   }
 }
 
-.thumbs img {
-  max-height: 120px;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border-radius: 5px;
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: #fff;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff;
 }
 
