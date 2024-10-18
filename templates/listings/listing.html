@@ -46,7 +46,7 @@
           <img src="{{ listing.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
-            {% for i in range(1, 10) %}
+            {% for i in range 1 10 %}
                 {% if listing|get_attr:'photo_'|add:i %}
                 <div class="col-md-2">
                     <a href="{{ listing|get_attr:'photo_'|add:i.url }}" data-lightbox="home-images">
@@ -56,6 +56,7 @@
                 {% endif %}
             {% endfor %}
           </div>
+
           <!-- Fields -->
           <div class="row mb-5 fields">
             <div class="col-md-6">
