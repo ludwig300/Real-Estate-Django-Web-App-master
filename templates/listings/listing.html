@@ -46,14 +46,15 @@
           <img src="{{ listing.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
-            {% if listing.photo_1 %}
-            <div class="col-md-2">
-              <a href="{{ listing.photo_1.url }}" data-lightbox="home-images">
-                <img src="{{ listing.photo_1.url }}" alt="" class="img-fluid">
-              </a>
-            </div>
-            {% endif %}
-            <!-- Additional thumbnail logic for other photos (photo_2 - photo_6) -->
+            {% for i in range(1, 10) %}
+                {% if listing|get_attr:'photo_'|add:i %}
+                <div class="col-md-2">
+                    <a href="{{ listing|get_attr:'photo_'|add:i.url }}" data-lightbox="home-images">
+                        <img src="{{ listing|get_attr:'photo_'|add:i.url }}" alt="" class="img-fluid">
+                    </a>
+                </div>
+                {% endif %}
+            {% endfor %}
           </div>
           <!-- Fields -->
           <div class="row mb-5 fields">
