@@ -123,7 +123,7 @@ option {
   color: black;
 }
 
-//* Стили для флагов в переключателе языка */
+/* Стили для флагов в переключателе языка */
 .navbar .dropdown {
   margin-left: auto;
 }
@@ -162,4 +162,10 @@ option {
   }
 }
 
+.thumbs img {
+  max-height: 120px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
 

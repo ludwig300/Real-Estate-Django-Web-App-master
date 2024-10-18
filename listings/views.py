@@ -18,24 +18,13 @@ def index(request):
   return render(request, 'listings/listings.html', context)
 
 def listing(request, listing_id):
-    listing = get_object_or_404(Listing, pk=listing_id)
-    
-    # Создаем список фотографий, если они существуют
-    photos = []
-    for i in range(1, 7):  # Поддержка до 6 фотографий
-        photo_attr = f'photo_{i}'
-        if hasattr(listing, photo_attr):
-            photo = getattr(listing, photo_attr)
-            if photo:
-                photos.append(photo)
-    
-    context = {
-        'listing': listing,
-        'photos': photos,
-    }
-    
-    return render(request, 'listings/listing.html', context)
+  listing = get_object_or_404(Listing, pk=listing_id)
 
+  context = {
+    'listing': listing
+  }
+
+  return render(request, 'listings/listing.html', context)
 
 def search(request):
   queryset_list = Listing.objects.order_by('-list_date')
