@@ -82,6 +82,7 @@
         {% if listings %}
           {% for listing in listings %}
           <div class="col-md-6 col-lg-4 mb-4">
+            <a href="{% url 'listing' listing.id %}" class="card-link"></a>
               <div class="card listing-preview">
                 <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="{% trans 'Property Image' %}">
                 <div class="card-img-overlay">
@@ -115,8 +116,6 @@
                     <div class="col-6">
                       <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
                   </div>
-                  <hr>
-                  <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">{% trans "More Info" %}</a>
                 </div>
               </div>
             </div>
