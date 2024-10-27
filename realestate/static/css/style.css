@@ -175,34 +175,3 @@ option {
 .swiper-pagination-bullet {
   background-color: #fff;
 }
-
-/* Основные цвета */
-:root {
-  --primary-color: #2D9CDB; /* Светло-синий */
-  --secondary-color: #333333; /* Темно-серый */
-  --accent-color: #27AE60; /* Зеленый для кнопок */
-  --background-color: #F9F9F9; /* Светло-серый фон */
-}
-
-/* Применение цветов */
-body {
-  background-color: var(--background-color);
-  color: var(--secondary-color);
-}
-
-.navbar, .footer {
-  background-color: var(--primary-color);
-  color: #FFFFFF;
-}
-
-.btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: #FFFFFF;
-}
-
-.btn-primary:hover {
-  background-color: darken(var(--accent-color), 10%);
-  border-color: darken(var(--accent-color), 10%);
-}
-
