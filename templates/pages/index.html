@@ -58,67 +58,113 @@
 <br>
   <!-- Alerts -->
   {% include 'partials/_alerts.html' %}
-
-  <!-- Listings -->
-  <section id="listings" class="py-4">
-    <div class="container">
+<!-- Listings -->
+<section id="listings" class="py-4">
+  <div class="container">
       <div class="row">
-        {% if listings %}
-          {% for listing in listings %}
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="{% url 'listing' listing.id %}" class="card-link">  <!-- Добавляем ссылку вокруг карточки -->
-              <div class="card listing-preview">
-                <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="Property Image">
-                <div class="card-img-overlay">
-                  <h2>
-                    <span class="badge badge-secondary text-white">{{ listing.price | intcomma }} thb</span>
-                  </h2>
-                </div>
-                <div class="card-body">
-                  <div class="listing-heading text-center">
-                    <h4 class="text-primary">{{ listing.title }}</h4>
-                    <p>
-                      <i class="fas fa-map-marker text-secondary"></i> {{ listing.city }}
-                    </p>
+          {% if listings %}
+              {% for listing in listings %}
+              <div class="col-md-6 col-lg-4 mb-4">
+                <a href="{% url 'listing' listing.id %}" class="card-link">  <!-- Добавляем ссылку вокруг карточки -->
+                  <div class="card listing-preview">
+                      <!-- Swiper Slider -->
+                      <div class="swiper-container mySwiper" style="position: relative; overflow: hidden; border-radius: 8px;">
+                        <div class="swiper-wrapper">
+                            {% if listing.photo_main %}
+                            <div class="swiper-slide">
+                                <img src="{{ listing.photo_main.url }}" class="img-fluid" alt="Property Image" style="width: 100%; height: auto;">
+                                <button onclick="toggleFavorite({{ listing.id }})" class="favorite-btn">
+                                  <i class="fa" id="fav-icon-{{ listing.id }}"></i> В избранное
+                                </button>
+                            </div>
+                            {% endif %}
+                            {% if listing.photo_1 %}
+                            <div class="swiper-slide">
+                                <img src="{{ listing.photo_1.url }}" class="img-fluid" alt="Photo 1">
+                                <button onclick="toggleFavorite({{ listing.id }})" class="favorite-btn">
+                                  <i class="fa" id="fav-icon-{{ listing.id }}"></i> В избранное
+                                </button>
+                            </div>
+                            {% endif %}
+                            {% if listing.photo_2 %}
+                            <div class="swiper-slide">
+                                <img src="{{ listing.photo_2.url }}" class="img-fluid" alt="Photo 2">
+                                <button onclick="toggleFavorite({{ listing.id }})" class="favorite-btn">
+                                  <i class="fa" id="fav-icon-{{ listing.id }}"></i> В избранное
+                                </button>
+                            </div>
+                            {% endif %}
+                            {% if listing.photo_3 %}
+                            <div class="swiper-slide">
+                                <img src="{{ listing.photo_3.url }}" class="img-fluid" alt="Photo 3">
+                                <button onclick="toggleFavorite({{ listing.id }})" class="favorite-btn">
+                                  <i class="fa" id="fav-icon-{{ listing.id }}"></i> В избранное
+                                </button>
+                            </div>
+                            {% endif %}
+                            {% if listing.photo_4 %}
+                            <div class="swiper-slide">
+                                <img src="{{ listing.photo_4.url }}" class="img-fluid" alt="Photo 4">
+                                <button onclick="toggleFavorite({{ listing.id }})" class="favorite-btn">
+                                  <i class="fa" id="fav-icon-{{ listing.id }}"></i> В избранное
+                                </button>
+                            </div>
+                            {% endif %}
+                            {% if listing.photo_5 %}
+                            <div class="swiper-slide">
+                                <img src="{{ listing.photo_5.url }}" class="img-fluid" alt="Photo 5">
+                                <button onclick="toggleFavorite({{ listing.id }})" class="favorite-btn">
+                                  <i class="fa" id="fav-icon-{{ listing.id }}"></i> В избранное
+                                </button>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <!-- Swiper Pagination -->
+                        <div class="swiper-pagination"></div>
+                      </div>
+
+                      <div class="card-body">
+                          <div class="listing-heading text-center">
+                              <h4 class="text-primary">{{ listing.title }}</h4>
+                              <p><i class="fas fa-map-marker text-secondary"></i> {{ listing.city }}</p>
+                          </div>
+                          <hr>
+                          <div class="row py-2 text-secondary">
+                              <div class="col-6">
+                                  <i class="fas fa-th-large"></i> {% trans "Sqm:" %} {{ listing.sqm }}
+                              </div>
+                              <div class="col-6">
+                                  <i class="fas fa-bed"></i> {% trans "Bedrooms:" %} {{ listing.bedrooms }}
+                              </div>
+                          </div>
+                          <div class="row py-2 text-secondary">
+                              <div class="col-6">
+                                  <i class="fas fa-bath"></i> {% trans "Bathrooms:" %} {{ listing.bathrooms }}
+                              </div>
+                          </div>
+                          <hr>
+                          <div class="row py-2 text-secondary">
+                              <div class="col-12">
+                                  <i class="fas fa-user"></i> {{ listing.realtor }}
+                              </div>
+                          </div>
+                          <div class="row text-secondary pb-2">
+                              <div class="col-6">
+                                  <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                  <hr>
-                  <div class="row py-2 text-secondary">
-                    <div class="col-6">
-                      <i class="fas fa-th-large"></i> {% trans "Sqm:" %} {{ listing.sqm }}
-                    </div>
-                    <div class="col-6">
-                      <i class="fas fa-bed"></i> {% trans "Bedrooms:" %} {{ listing.bedrooms }}
-                    </div>
-                  </div>
-                  <div class="row py-2 text-secondary">
-                    <div class="col-6">
-                      <i class="fas fa-bath"></i> {% trans "Bathrooms:" %} {{ listing.bathrooms }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row py-2 text-secondary">
-                    <div class="col-12">
-                      <i class="fas fa-user"></i> {{ listing.realtor }}
-                    </div>
-                  </div>
-                  <div class="row text-secondary pb-2">
-                    <div class="col-6">
-                      <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}
-                    </div>
-                  </div>
-                </div>
               </div>
-            </a>
-          </div>
-          {% endfor %}
-        {% else %}
-          <div class="col-md-12">
-            <p>{% trans "No Listings Available" %}</p>
-          </div>
-        {% endif %}
+              {% endfor %}
+          {% else %}
+              <div class="col-md-12">
+                  <p>{% trans "No Listings Available" %}</p>
+              </div>
+          {% endif %}
       </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <section id="services" class="py-5 bg-secondary text-white">
     <div class="container">

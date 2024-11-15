@@ -4277,53 +4277,55 @@ button.close {
 .align-text-top {
   vertical-align: text-top !important; }
 
-.bg-primary {
-  background-color: #10284e !important; }
-
-a.bg-primary:hover, a.bg-primary:focus,
-button.bg-primary:hover,
-button.bg-primary:focus {
-  background-color: #071224 !important; }
-
-.bg-secondary {
-  background-color: #30caa0 !important; }
-
-a.bg-secondary:hover, a.bg-secondary:focus,
-button.bg-secondary:hover,
-button.bg-secondary:focus {
-  background-color: #26a17f !important; }
-
-.bg-success {
-  background-color: #20c997 !important; }
-
-a.bg-success:hover, a.bg-success:focus,
-button.bg-success:hover,
-button.bg-success:focus {
-  background-color: #199d76 !important; }
-
-.bg-info {
-  background-color: #17a2b8 !important; }
-
-a.bg-info:hover, a.bg-info:focus,
-button.bg-info:hover,
-button.bg-info:focus {
-  background-color: #117a8b !important; }
-
-.bg-warning {
-  background-color: #ffc107 !important; }
-
-a.bg-warning:hover, a.bg-warning:focus,
-button.bg-warning:hover,
-button.bg-warning:focus {
-  background-color: #d39e00 !important; }
-
-.bg-danger {
-  background-color: #e94646 !important; }
-
-a.bg-danger:hover, a.bg-danger:focus,
-button.bg-danger:hover,
-button.bg-danger:focus {
-  background-color: #e11b1b !important; }
+  .bg-primary {
+    background-color: #1D8ACB !important; /* Более насыщенный синий */
+  }
+  
+  a.bg-primary:hover, a.bg-primary:focus,
+  button.bg-primary:hover,
+  button.bg-primary:focus {
+    background-color: #0E355A !important; /* Более темный синий для ховера */
+  }
+  
+  .bg-secondary {
+    background-color: #28B591 !important; /* Спокойный зеленый */
+  }
+  
+  a.bg-secondary:hover, a.bg-secondary:focus,
+  button.bg-secondary:hover,
+  button.bg-secondary:focus {
+    background-color: #1F9D79 !important;
+  }
+  
+  .bg-success {
+    background-color: #1FAB7D !important; /* Яркий зеленый для успеха */
+  }
+  
+  a.bg-success:hover, a.bg-success:focus,
+  button.bg-success:hover,
+  button.bg-success:focus {
+    background-color: #188C63 !important;
+  }
+  
+  .bg-warning {
+    background-color: #E5A127 !important; /* Ярко-желтый */
+  }
+  
+  a.bg-warning:hover, a.bg-warning:focus,
+  button.bg-warning:hover,
+  button.bg-warning:focus {
+    background-color: #CC8F1E !important;
+  }
+  
+  .bg-danger {
+    background-color: #D9534F !important; /* Темный красный для опасности */
+  }
+  
+  a.bg-danger:hover, a.bg-danger:focus,
+  button.bg-danger:hover,
+  button.bg-danger:focus {
+    background-color: #B53232 !important;
+  }
 
 .bg-light {
   background-color: #f8f9fa !important; }
@@ -4456,7 +4458,7 @@ button.bg-dark:focus {
   display: table-cell !important; }
 
 .d-flex {
-  display: flex !important; }
+  display: flex; }
 
 .d-inline-flex {
   display: inline-flex !important; }

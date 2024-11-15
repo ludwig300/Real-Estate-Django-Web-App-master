@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),  # Главная страница остается без изменений, так как это корневой URL
     path(_('about/'), views.about, name='about'),  # Добавляем мультиязычную поддержку для страницы "О нас"
+    path('favorites/', views.favorites, name='favorites'),
 ]

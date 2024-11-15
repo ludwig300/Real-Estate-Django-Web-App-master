@@ -1,26 +1,23 @@
 {% load static i18n %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{% static 'css/all.css' %}">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-  <!-- Custom -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <!-- Lightbox -->
-  <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{% static 'css/all.css' %}"> <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Custom -->
+  <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}"> <!-- Lightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"> <!-- Swiper -->
 
+  <!-- Meta tags -->
   <meta name="description" content="Real Estate platform offering the best properties for sale and rent.">
   <meta name="keywords" content="real estate, property, buy, rent, sell, home">
   <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  
+
   <title>Real Estate {% block title %}{% endblock %}</title>
 </head>
 
@@ -29,32 +26,91 @@
   {% include 'partials/_topbar.html' %}
   <!-- NavBar -->
   {% include 'partials/_navbar.html' %}
+  
   <!-- Main Content -->
   {% block content %}{% endblock %}
+  
   <!-- Footer -->
   {% include 'partials/_footer.html' %}
-  
+
   <!-- Scripts -->
   <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'js/lightbox.min.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- Swiper Initialization -->
   <script>
     var swiper = new Swiper(".mySwiper", {
       spaceBetween: 10,
       slidesPerView: 1,
       loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
     });
   </script>
-  
-</body>
 
+  <!-- Favorite Management Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const currentUrl = new URL(window.location.href);
+
+        // Automatically redirect to favorites page with IDs if not already set
+        if (favorites.length > 0 && !currentUrl.searchParams.has("favorite_ids")) {
+            currentUrl.searchParams.set("favorite_ids", favorites.join(','));
+            window.location.href = currentUrl.toString();
+        }
+        
+        updateFavoriteIcons();
+    });
+
+    function toggleFavorite(listingId) {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        
+        if (favorites.includes(listingId)) {
+            favorites = favorites.filter(id => id !== listingId);
+            alert('Объект удалён из избранного');
+        } else {
+            favorites.push(listingId);
+            alert('Объект добавлен в избранное');
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        updateFavoriteIcons();
+    }
+
+    function updateFavoriteIcons() {
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        
+        document.querySelectorAll('.favorite-btn').forEach(button => {
+            const listingId = parseInt(button.getAttribute('onclick').match(/\d+/)[0]);
+            const icon = document.getElementById(`fav-icon-${listingId}`);
+            
+            if (icon) {
+                if (favorites.includes(listingId)) {
+                    icon.classList.add('fa-heart');
+                    icon.classList.remove('fa-heart-o');
+                } else {
+                    icon.classList.add('fa-heart-o');
+                    icon.classList.remove('fa-heart');
+                }
+            }
+        });
+    }
+
+    function redirectToFavorites(event) {
+        event.preventDefault();
+        const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+        if (favorites.length > 0) {
+            const favoriteIds = favorites.join(',');
+            window.location.href = `{% url 'favorites' %}?favorite_ids=${favoriteIds}`;
+        } else {
+            alert('Нет избранных объектов');
+        }
+    }
+  </script>
+
+</body>
 </html>

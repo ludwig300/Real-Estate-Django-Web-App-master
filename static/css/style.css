@@ -123,18 +123,78 @@ option {
   color: black;
 }
 
-/* Выравнивание флага и текста */
-option img {
-  margin-right: 5px;
+/* Стили для флагов в переключателе языка */
+.navbar .dropdown {
+  margin-left: auto;
+}
+.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  padding: 0; /* Убираем отступы */
 }
 
-.navbar .nav-link img {
-  vertical-align: middle;
+.dropdown-menu {
+  min-width: 1rem;
+  right: 0; /* Гарантируем, что выпадающее меню появится справа */
+  left: auto; /* Сбрасываем возможное левое выравнивание */
 }
 
+.dropdown-item img {
+  width: 30px; /* Увеличим немного ширину */
+  height: auto;
+}
+.dropdown-item {
+  padding: 0.15rem 0.6rem;
+  display: flex;
+  align-items: center; /* Выравниваем иконки по центру */
+}
+
+/* Мобильная версия */
 @media (max-width: 768px) {
-  .navbar-nav.ml-auto {
-    justify-content: center;
-    margin-top: 10px;
+  .dropdown-toggle img {
+    width: 26px; /* Меньший размер для мобильных устройств */
+    height: auto;
   }
+
+  .dropdown-item img {
+    width: 26px; /* Тоже уменьшаем флаги */
+    height: auto;
+  }
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: #fff;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff;
+}
+
+/* Стили для кнопки "В избранное" */
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6); /* Темный фон с большей прозрачностью */
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.favorite-btn:hover {
+  background: rgba(0, 0, 0, 0.8); /* Более темный фон при наведении */
+}
+
+.favorite-btn i {
+  margin-right: 4px; /* Отступ иконки от текста */
 }

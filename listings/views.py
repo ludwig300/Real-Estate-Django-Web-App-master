@@ -26,6 +26,22 @@ def listing(request, listing_id):
 
   return render(request, 'listings/listing.html', context)
 
+
+def listings_view(request):
+    listings = Listing.objects.all()
+    for listing in listings:
+        listing.photo_list = [
+            listing.photo_1,
+            listing.photo_2,
+            listing.photo_3,
+            listing.photo_4
+        ]
+    context = {
+        'listings': listings,
+    }
+    return render(request, 'listings/listings.html', context)
+
+
 def search(request):
   queryset_list = Listing.objects.order_by('-list_date')
 
